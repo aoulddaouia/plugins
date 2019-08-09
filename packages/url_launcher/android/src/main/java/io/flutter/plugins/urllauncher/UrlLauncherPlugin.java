@@ -53,7 +53,7 @@ public class UrlLauncherPlugin implements MethodCallHandler {
 
   private void canLaunch(String url, Result result) {
     Intent launchIntent = new Intent(Intent.ACTION_VIEW);
-    launchIntent.setData(Uri.parse(url));
+    launchIntent.setDataAndType(Uri.parse(url), "video/mp4");
     ComponentName componentName =
         launchIntent.resolveActivity(mRegistrar.context().getPackageManager());
 
